@@ -1,18 +1,18 @@
 /*
  *  SafeBuffer.h
- *  File defining a simple, interrupt-safe character buffer for Arduino
+ *  File defining a simple, safe character buffer
  *  Author: Alex St. Clair
  *  July 2019
  */
  
- #ifndef SAFEBUFFER_H
- #define SAFEBUFFER_H
+#ifndef SAFEBUFFER_H
+#define SAFEBUFFER_H
 
 #include <StdInt.h>
- 
+
 class SafeBuffer {
 public:
-    // constructors and destructor (the object must be passed an *allocated* buffer)
+    // constructor and destructor (the object must be passed an allocated buffer)
 	SafeBuffer(uint8_t * buf_pointer, uint16_t buf_size);
 	~SafeBuffer() { };
 
@@ -20,12 +20,12 @@ public:
     uint16_t NumElements();
 	bool IsEmpty();
 	bool IsFull();
-	
+
     // buffer additions and subtractions
     bool Push(uint8_t item);
 	bool Pop(uint8_t * item);
     bool Peek(uint8_t * item);
-	
+
     // empty the buffer
     void Clear();
 
@@ -40,4 +40,4 @@ private:
 
 };
 
- #endif /* SAFEBUFFER_H */
+#endif /* SAFEBUFFER_H */
