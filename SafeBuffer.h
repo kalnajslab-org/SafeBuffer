@@ -8,7 +8,7 @@
 #ifndef SAFEBUFFER_H
 #define SAFEBUFFER_H
 
-#include <StdInt.h>
+#include <stdint.h>
 
 class SafeBuffer {
 public:
